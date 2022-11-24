@@ -1,0 +1,38 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_employee_title
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0-20221115\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-24 15:24+0000\n"
+"PO-Revision-Date: 2022-11-24 15:24+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_employee_title
+#: model:ir.model,name:hr_employee_title.model_hr_employee_base
+msgid "Basic Employee"
+msgstr ""
+
+#. module: hr_employee_title
+#: model:ir.model,name:hr_employee_title.model_hr_employee
+msgid "Employee"
+msgstr ""
+
+#. module: hr_employee_title
+#: model:ir.model.fields,field_description:hr_employee_title.field_hr_employee__title
+#: model:ir.model.fields,field_description:hr_employee_title.field_hr_employee_base__title
+#: model:ir.model.fields,field_description:hr_employee_title.field_hr_employee_public__title
+msgid "Title"
+msgstr ""
+
+#. module: hr_employee_title
+#: model_terms:ir.ui.view,arch_db:hr_employee_title.hr_employee_view_form
+msgid "e.g. Mister"
+msgstr ""
