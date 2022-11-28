@@ -21,6 +21,8 @@ Hr Employee Title
 
 This module allows you to add title name in employee form, and sync to related partners.
 
+.. image:: https://raw.githubusercontent.com/amincheloh/odoo-addons/16.0/hr_employee_title/static/description/screenshot.png
+
 **Table of contents**
 
 .. contents::
