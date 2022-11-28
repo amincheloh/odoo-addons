@@ -7,9 +7,9 @@ from odoo import api, models
 class HrEmployee(models.Model):
     _inherit = "hr.employee"
 
-    @api.model
-    def create(self, vals):
-        res = super().create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        res = super().create(vals_list)
         self.related_contact_ids.title = self.title
         return res
 
