@@ -10,6 +10,6 @@
     "website": "https://github.com/amincheloh/odoo-addons",
     "category": "Human Resources",
     "depends": ["hr"],
-    'images': ['static/description/cover.png'],
+    "images": ["static/description/cover.png"],
     "data": ["views/hr_employee_views.xml"],
 }
