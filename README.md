@@ -21,6 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[account_payment_term_tags](account_payment_term_tags/) | 16.0.1.0.0 |  | Tags/Categories field for Account Payment Term
 [hr_employee_title](hr_employee_title/) | 16.0.1.0.1 |  | Title field for Employee model
 [l10n_th_google_fonts](l10n_th_google_fonts/) | 16.0.1.0.0 |  | A Collection of Thai Google Fonts
 
