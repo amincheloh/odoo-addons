@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="network_address_field.IPv4Field" owl="1">
+        <t t-if="props.readonly">
+            <span t-esc="formattedValue" />
+        </t>
+        <t t-else="">
+            <input
+                class="o_input"
+                type="text"
+                t-att-id="props.id"
+                t-att-autocomplete="props.autocomplete"
+                t-att-placeholder="props.placeholder"
+                t-att-maxlength="props.maxLength > 0 and props.maxLength"
+                t-ref="input"
+            />
+        </t>
+    </t>
+</templates>
