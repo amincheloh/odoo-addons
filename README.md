@@ -25,7 +25,7 @@ addon | version | maintainers | summary
 [discuss_user_group](discuss_user_group/) | 16.0.1.0.0 |  | User group for Discuss Menu
 [hr_employee_title](hr_employee_title/) | 16.0.1.0.1 |  | Title field for Employee model
 [l10n_th_google_fonts](l10n_th_google_fonts/) | 16.0.1.0.0 |  | A Collection of Thai Google Fonts
-[network_address_field](network_address_field/) | 16.0.1.0.0 |  | Network Address Fields and Widgets
+[network_address_field](network_address_field/) | 16.0.1.0.1 |  | Network Address Fields and Widgets
 
 [//]: # (end addons)
 

@@ -40,6 +40,12 @@ class IPv4Host(NetworkAddressField):
 
         return ipaddress.ip_interface(value)
 
+    def convert_to_export(self, value, record):
+        if not value:
+            return None
+
+        return str(value.ip)  # without netmask
+
 
 class IPv4Network(NetworkAddressField):
     type = "ipv4_network"
@@ -74,6 +80,12 @@ class IPv4Network(NetworkAddressField):
             return None
 
         return ipaddress.ip_network(value)
+
+    def convert_to_export(self, value, record):
+        if not value:
+            return None
+
+        return str(value)
 
 
 fields.IPv4Host = IPv4Host
