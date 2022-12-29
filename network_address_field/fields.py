@@ -28,23 +28,33 @@ class IPv4Host(NetworkAddressField):
 
         return ip_str if value else None
 
-    def convert_to_cache(self, value, record, validate=True):
+    @staticmethod
+    def to_ipaddress(value):
         if not value:
             return None
 
         return ipaddress.ip_interface(value)
+
+    @staticmethod
+    def to_string(value):
+        if not value:
+            return None
+
+        if isinstance(value, str):
+            value = IPv4Host.to_ipaddress(value)
+        return str(value.ip) if value.network.prefixlen == 32 else str(value)
+
+    def convert_to_cache(self, value, record, validate=True):
+        return self.to_ipaddress(value)
 
     def convert_to_record(self, value, record):
-        if not value:
-            return None
+        return self.to_ipaddress(value)
 
-        return ipaddress.ip_interface(value)
+    def convert_to_read(self, value, record, use_name_get=True):
+        return self.to_string(value)
 
     def convert_to_export(self, value, record):
-        if not value:
-            return None
-
-        return str(value.ip)  # without netmask
+        return self.to_string(value)
 
 
 class IPv4Network(NetworkAddressField):
@@ -69,23 +79,33 @@ class IPv4Network(NetworkAddressField):
 
         return network_str if value else None
 
-    def convert_to_cache(self, value, record, validate=True):
+    @staticmethod
+    def to_ipaddress(value):
         if not value:
             return None
 
         return ipaddress.ip_network(value)
+
+    @staticmethod
+    def to_string(value):
+        if not value:
+            return None
+
+        if isinstance(value, str):
+            value = IPv4Host.to_ipaddress(value)
+        return str(value)
+
+    def convert_to_cache(self, value, record, validate=True):
+        return self.to_ipaddress(value)
 
     def convert_to_record(self, value, record):
-        if not value:
-            return None
+        return self.to_ipaddress(value)
 
-        return ipaddress.ip_network(value)
+    def convert_to_read(self, value, record, use_name_get=True):
+        return self.to_string(value)
 
     def convert_to_export(self, value, record):
-        if not value:
-            return None
-
-        return str(value)
+        return self.to_string(value)
 
 
 fields.IPv4Host = IPv4Host

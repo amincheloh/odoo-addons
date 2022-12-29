@@ -6,20 +6,12 @@ import {useInputField} from "@web/views/fields/input_field_hook";
 
 const formatters = registry.category("formatters");
 
-export function formatIPv4(value, options = {}) {
+export function formatIPv4(value) {
     if (!value) {
         return "";
     }
 
-    if (options && !options.withSubnet) {
-        return value.replace(/(\/.+)/, "");
-    }
-
     return value;
-}
-
-export function formatIPv4Network(value, options) {
-    return formatIPv4(value, {...options, withSubnet: true});
 }
 
 export class IPv4Field extends Component {
@@ -64,10 +56,9 @@ IPv4Field.props = {
 IPv4Field.extractProps = ({attrs, field}) => {
     let maxLength = 15;
     const regex = /^.+$/;
-    let formatter = formatIPv4;
+    const formatter = formatIPv4;
     if (field.type === "ipv4_network") {
         maxLength = 15 + 3;
-        formatter = formatIPv4Network;
     }
 
     return {
@@ -81,4 +72,4 @@ IPv4Field.supportedTypes = ["ipv4_host", "ipv4_network"];
 registry.category("fields").add("ipv4_host", IPv4Field);
 registry.category("fields").add("ipv4_network", IPv4Field);
 formatters.add("ipv4_host", formatIPv4);
-formatters.add("ipv4_network", formatIPv4Network);
+formatters.add("ipv4_network", formatIPv4);
