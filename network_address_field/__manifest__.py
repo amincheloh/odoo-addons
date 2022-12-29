@@ -8,7 +8,7 @@
     "license": "AGPL-3",
     "author": "Amin Cheloh",
     "website": "https://github.com/amincheloh/odoo-addons",
-    "depends": ["base", "web"],
+    "depends": ["base", "web", "mail"],
     "category": "Hidden",
     "assets": {
         "web.assets_backend": [
