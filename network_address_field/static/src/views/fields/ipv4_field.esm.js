@@ -53,13 +53,10 @@ IPv4Field.props = {
     regex: {type: Object, optional: true},
     formatter: {type: Function, optional: true},
 };
-IPv4Field.extractProps = ({attrs, field}) => {
-    let maxLength = 15;
+IPv4Field.extractProps = ({attrs}) => {
+    const maxLength = 15 + 3;
     const regex = /^.+$/;
     const formatter = formatIPv4;
-    if (field.type === "ipv4_network") {
-        maxLength = 15 + 3;
-    }
 
     return {
         placeholder: attrs.placeholder,
