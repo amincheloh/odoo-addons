@@ -28,6 +28,11 @@ msgid "%(value)s does not appear to be an IPv4 address"
 msgstr ""
 
 #. module: network_address_field
+#: model:ir.model,name:network_address_field.model_ir_fields_converter
+msgid "Fields Converter"
+msgstr ""
+
+#. module: network_address_field
 #: model:ir.model,name:network_address_field.model_mail_tracking_value
 msgid "Mail Tracking Value"
 msgstr ""
