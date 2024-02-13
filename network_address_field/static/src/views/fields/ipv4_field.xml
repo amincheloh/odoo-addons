@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
-    <t t-name="network_address_field.IPv4Field" owl="1">
+    <t t-name="network_address_field.IPv4Field">
         <t t-if="props.readonly">
             <span t-esc="formattedValue" />
         </t>

@@ -4,7 +4,7 @@
 {
     "name": "Network Address Field",
     "summary": "Network Address Fields and Widgets",
-    "version": "16.0.1.0.2",
+    "version": "17.0.1.0.0",
     "license": "AGPL-3",
     "author": "Amin Cheloh",
     "website": "https://github.com/amincheloh/odoo-addons",

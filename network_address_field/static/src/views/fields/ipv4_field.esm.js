@@ -1,5 +1,6 @@
 /** @odoo-module **/
 import {Component, useRef} from "@odoo/owl";
+import {_t} from "@web/core/l10n/translation";
 import {registry} from "@web/core/registry";
 import {standardFieldProps} from "@web/views/fields/standard_field_props";
 import {useInputField} from "@web/views/fields/input_field_hook";
@@ -15,6 +16,18 @@ export function formatIPv4(value) {
 }
 
 export class IPv4Field extends Component {
+    static template = "network_address_field.IPv4Field";
+    static props = {
+        ...standardFieldProps,
+        placeholder: {type: String, optional: true},
+        maxLength: {type: Number, optional: true},
+        regex: {type: Object, optional: true},
+        formatter: {type: Function, optional: true},
+    };
+    static defaultProps = {
+        shouldTrim: true,
+    };
+
     setup() {
         this.input = useRef("input");
         useInputField({
@@ -42,31 +55,25 @@ export class IPv4Field extends Component {
     }
 }
 
-IPv4Field.template = "network_address_field.IPv4Field";
-IPv4Field.defaultProps = {
-    shouldTrim: true,
-};
-IPv4Field.props = {
-    ...standardFieldProps,
-    placeholder: {type: String, optional: true},
-    maxLength: {type: Number, optional: true},
-    regex: {type: Object, optional: true},
-    formatter: {type: Function, optional: true},
-};
-IPv4Field.extractProps = ({attrs}) => {
-    const maxLength = 15 + 3;
-    const regex = /^.+$/;
-    const formatter = formatIPv4;
+export const ipv4Field = {
+    component: IPv4Field,
+    supportedTypes: ["ipv4_host", "ipv4_network"],
+    displayName: _t("IPv4Field"),
+    extractProps: ({attrs}) => {
+        const maxLength = 15 + 3;
+        const regex = /^.+$/;
+        const formatter = formatIPv4;
 
-    return {
-        placeholder: attrs.placeholder,
-        maxLength,
-        regex,
-        formatter,
-    };
+        return {
+            placeholder: attrs.placeholder,
+            maxLength,
+            regex,
+            formatter,
+        };
+    },
 };
-IPv4Field.supportedTypes = ["ipv4_host", "ipv4_network"];
-registry.category("fields").add("ipv4_host", IPv4Field);
-registry.category("fields").add("ipv4_network", IPv4Field);
+
+registry.category("fields").add("ipv4_host", ipv4Field);
+registry.category("fields").add("ipv4_network", ipv4Field);
 formatters.add("ipv4_host", formatIPv4);
 formatters.add("ipv4_network", formatIPv4);
