@@ -37,7 +37,7 @@ export class IPv4Field extends Component {
     }
 
     get value() {
-      return this.props.record.data[this.props.name];
+        return this.props.record.data[this.props.name];
     }
 
     get formattedValue() {
