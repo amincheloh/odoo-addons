@@ -16,6 +16,13 @@
 <!-- prettier-ignore-start -->
 
 [//]: # (addons)
+
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[network_address_field](network_address_field/) | 17.0.1.0.0 |  | Network Address Fields and Widgets
+
 [//]: # (end addons)
 
 <!-- prettier-ignore-end -->
