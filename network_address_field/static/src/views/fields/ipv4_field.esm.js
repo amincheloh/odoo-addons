@@ -36,8 +36,12 @@ export class IPv4Field extends Component {
         });
     }
 
+    get value() {
+        return this.props.record.data[this.props.name];
+    }
+
     get formattedValue() {
-        return this.props.formatter(this.props.value);
+        return this.props.formatter(this.value);
     }
 
     parse(value) {
